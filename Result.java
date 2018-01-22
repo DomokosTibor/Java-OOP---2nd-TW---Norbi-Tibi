@@ -1,3 +1,3 @@
-public class Result {
+public class Result extends Simulation{
     
 }
