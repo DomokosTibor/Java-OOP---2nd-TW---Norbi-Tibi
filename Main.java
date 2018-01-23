@@ -14,6 +14,8 @@ public class Main {
             int rounds = args[0];
             generateSimulation(rounds);
             }
+
+        Simulation.generateData();
         }
     }
 }
