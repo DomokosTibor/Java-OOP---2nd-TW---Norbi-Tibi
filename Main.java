@@ -1,25 +1,20 @@
 public class Main {
 
-    public generateSimulation(int rounds) {
-        Simulation.???
-        return result;
+    public static int generateSimulation(int rounds) {
+        // Simulation goes here
+        System.out.println(rounds); 
+        return 0;
     }
-
 
     public static void main(String[] args) {
         if (args.length < 1) {
-          // Show STAT  
+            // Show Stat
+            System.out.println("Stat..."); 
         }
         else {
-            if (args[0] == Integer) {
-                int rounds = args[0];
-                generateSimulation(rounds);
-            }
-            else if (args[0].toLowerCase() == "csv") {
-                // SHOW CSV file
-            }
-
-        Simulation.generateData();
+            // Start simulation
+            int num = Integer.parseInt(args[0]);
+            generateSimulation(num);         
         }
     }
 }
