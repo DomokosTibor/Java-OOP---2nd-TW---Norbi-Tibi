@@ -8,11 +8,15 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length < 1) {
-            Logger.writeErrorMessage("Missing argument(s)!");
+          // Show STAT  
         }
         else {
-            int rounds = args[0];
-            generateSimulation(rounds);
+            if (args[0] == Integer) {
+                int rounds = args[0];
+                generateSimulation(rounds);
+            }
+            else if (args[0].toLowerCase() == "csv") {
+                // SHOW CSV file
             }
         }
     }
