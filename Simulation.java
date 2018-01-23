@@ -9,17 +9,11 @@ public class Simulation {
 
     }
 
-    public int generateData() {
-        return 0;
+    public void generateData() {
+        
     }
 
-    public void load(){
-        PrintWriter pw = new PrintWriter(new File("data.csv"));
-        StringBuilder sb = new StringBuilder();
-        sb.append("number");
-        
-        pw.write(sb.toString());
-        pw.close();
-        System.out.println("done!");
+    public int load(){
+        return 0;
     }
 }
