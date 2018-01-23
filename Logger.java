@@ -8,7 +8,7 @@ public class Logger {
         System.out.format("%s %s %s\n", now, type, message);
     }
 
-    public Logger(int rounds, int simulationNumber) {
+    public Logger(int round, int simulationNumber) {
         System.out.println(rounds + "/" + simulationNumber + " >> ");
     }
 
