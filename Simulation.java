@@ -24,18 +24,12 @@ public class Simulation extends Simulator {
                 fbw.write(roundData);
                 fbw.newLine();
                 fbw.close();
-                /* DEL ME */
-                System.out.println(x.getName() + " exists!\nAppending to File...");
-                /* DEL ME */
             }
             catch (Exception e) {
-                System.out.println("ERROR?? Yes");
+                System.out.println("ERROR!!");
             }
         }
         else {
-            /* DEL ME */
-            System.out.println(x.getName() + " NOT exists!\nCreating File...");
-            /* DEL ME */
             try {
                 Formatter g = new Formatter(filename);
                 g.format(roundData + "\n");
