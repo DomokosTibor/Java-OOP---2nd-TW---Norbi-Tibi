@@ -8,7 +8,7 @@ import java.util.Formatter;
 
 
 public class Simulation {
-    
+    private Result result;
 
     public Simulation() {
 
@@ -54,5 +54,13 @@ public class Simulation {
         pw.write(sb.toString());
         pw.close();
         System.out.println("done!");
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
+    }
+
+    public Result getResult() {
+        return result;
     }
 }
