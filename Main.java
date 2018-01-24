@@ -1,13 +1,17 @@
 public class Main {
 
     public static void generateSimulation(int round) {
-/*        
+/*       
         Simulation simulation = new Simulation(round);
         Simulator simulator = new Simulator(simulation, new Logger(round, simulationNumber));
         simulation.setRoundResult(simulator.run());
-        simulation.generateData("log.csv");
-        return simulation;
-*/
+*/        
+        for (int i = 0; i < round; i++) {
+            Simulation.generateData("log.csv", Simulator.run());
+        }
+
+//        return simulation;
+
     }
 
     public static void main(String[] args) {
@@ -30,7 +34,7 @@ public class Main {
                 simulations[i] = generateSimulation(i);
             }
 */
-
+            generateSimulation(simulationNumber);
             
         }
     }
