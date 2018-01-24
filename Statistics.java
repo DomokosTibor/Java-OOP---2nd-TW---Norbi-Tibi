@@ -14,10 +14,6 @@ public class Statistics {
         File f = new File(fileName);
         if (f.exists()) {
             try {
-                File x = new File(fileName);
-                Scanner sc = new Scanner(x);
-                int logLineCounter = 0;
-                
                 int logGreenCounter = 0;
                 int logRedCounter = 0;
                 int logBlackCounter = 0;
@@ -43,8 +39,23 @@ public class Statistics {
                 String winnerRow = null;
                 int winnerRowNum = 0;
 
-                String[][] logArray = new String[10][6];
+                int logLines = 0;
+                int logLineCounter = 0;
 
+                // Counts the line in the LOG file
+                File y = new File(fileName);
+                Scanner scy = new Scanner(y);
+                while (scy.hasNext()) {
+                    String logLineY = scy.next();
+                    logLines++;
+                }
+                scy.close();
+
+
+                String[][] logArray = new String[logLines][6];
+
+                File x = new File(fileName);
+                Scanner sc = new Scanner(x);
                 while (sc.hasNext()) {
                     String logLine = sc.next();
 
