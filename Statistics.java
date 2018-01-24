@@ -1,10 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
 
 
 public class Statistics {
@@ -28,6 +26,7 @@ public class Statistics {
                 int logRow2Counter = 0;
                 int logRow3Counter = 0;
 
+                int mostNumber = -1;
                 String winnerColor = null;
                 int winnerColorNum = 0;
                 String winnerEvenOrOdd = null;
@@ -39,6 +38,8 @@ public class Statistics {
                 String winnerRow = null;
                 int winnerRowNum = 0;
 
+                int rolledNum = 0;
+                int max = -1;
                 int logLines = 0;
                 int logLineCounter = 0;
 
@@ -53,18 +54,29 @@ public class Statistics {
 
 
                 String[][] logArray = new String[logLines][6];
+                int[] mostNumberArray = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
                 File x = new File(fileName);
                 Scanner sc = new Scanner(x);
                 while (sc.hasNext()) {
                     String logLine = sc.next();
-
+                    
                     logArray[logLineCounter][0] = logLine.split(",")[0];
                     logArray[logLineCounter][1] = logLine.split(",")[1];
                     logArray[logLineCounter][2] = logLine.split(",")[2];
                     logArray[logLineCounter][3] = logLine.split(",")[3];
                     logArray[logLineCounter][4] = logLine.split(",")[4];
                     logArray[logLineCounter][5] = logLine.split(",")[5];
+
+                    rolledNum = Integer.parseInt(logArray[logLineCounter][0]);
+                    mostNumberArray[rolledNum] += 1;
+                    for (int counter = 1; counter < mostNumberArray.length; counter++) {
+                        if (mostNumberArray[counter] > max) {
+                            mostNumber = counter;
+                            max = mostNumberArray[counter];
+                        }
+                    }
+                    
 
 //              logNumber, logColor, logEvenOrOdd, logDozen, logHalf, logRow
                     if (logLine.split(",")[1].equals("red")) logRedCounter++;
@@ -103,6 +115,8 @@ public class Statistics {
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow2Counter) {winnerRow = "2nd Row"; winnerRowNum = logRow1Counter;}
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow3Counter) {winnerRow = "3nd Row"; winnerRowNum = logRow1Counter;}
 
+            // Have to change!!! >> log(String type, String message)
+                System.out.println(mostNumber + " (" + max * 100 / logLines + "%)");
                 int winnerColorPerCent = winnerColorNum * 100 / (logBlackCounter + logRedCounter + logGreenCounter);
                 System.out.println(winnerColor + " (" + winnerColorPerCent + "%)");
                 int winnerEvenOrOddPerCent = winnerEvenOrOddNum * 100 / (logOddCounter + logEvenCounter);
@@ -113,7 +127,6 @@ public class Statistics {
                 System.out.println(winnerHalf + " (" + winnerHalfPerCent + "%)");
                 int winnerRowPerCent = winnerRowNum * 100 / (logRow1Counter + logRow2Counter + logRow3Counter);
                 System.out.println(winnerRow + " (" + winnerRowPerCent + "%)");
-
             }
             catch(FileNotFoundException e) {
                 System.out.println("ERROR");
@@ -121,5 +134,4 @@ public class Statistics {
         }
         else System.out.println("ERROR: Log file is missing!");
     }
-
 }
