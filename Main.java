@@ -1,12 +1,11 @@
 public class Main {
 
-    public static void generateSimulation(int round) {
-/*
-        Simulation[] simulations = new Simulation[simulationNumber];}       
+    public static Simulation generateSimulation(int round) {
+       
         Simulation simulation = new Simulation(round);
-        Simulator simulator = new Simulator(simulation, new Logger(round, simulationNumber));
-        simulation.setRoundResult(simulator.run());
-*/        
+        //Simulator simulator = new Simulator(simulation, new Logger(round, simulationNumber));
+        
+       
         Logger.displayMessage("Adding " + round + " simulation(s) into the LOG file:");
         int progress = 0;
         for (double i = 0; i < round; i++) {
@@ -24,7 +23,7 @@ public class Main {
         }
         Logger.displayMessage("... 100%\nDone!");
 
-//        return simulation;
+        return simulation;
 
     }
 

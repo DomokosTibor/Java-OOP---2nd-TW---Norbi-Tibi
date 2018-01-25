@@ -105,15 +105,15 @@ public class Statistics {
                 else if (Math.max(logOddCounter, logEvenCounter) == logEvenCounter) {winnerEvenOrOdd = "Even"; winnerEvenOrOddNum = logEvenCounter;}
 
                 if ((Math.max(logDozen1Counter, Math.max(logDozen2Counter, logDozen3Counter))) == logDozen1Counter) {winnerDozen = "1st 12"; winnerDozenNum = logDozen1Counter;}
-                else if ((Math.max(logDozen1Counter, Math.max(logDozen2Counter, logDozen3Counter))) == logDozen2Counter) {winnerDozen = "1nd 12"; winnerDozenNum = logDozen2Counter;}
-                else if ((Math.max(logDozen1Counter, Math.max(logDozen2Counter, logDozen3Counter))) == logDozen3Counter) {winnerDozen = "1rd 12"; winnerDozenNum = logDozen3Counter;}
+                else if ((Math.max(logDozen1Counter, Math.max(logDozen2Counter, logDozen3Counter))) == logDozen2Counter) {winnerDozen = "2nd 12"; winnerDozenNum = logDozen2Counter;}
+                else if ((Math.max(logDozen1Counter, Math.max(logDozen2Counter, logDozen3Counter))) == logDozen3Counter) {winnerDozen = "3rd 12"; winnerDozenNum = logDozen3Counter;}
 
                 if (Math.max(logHalf1Counter, logHalf2Counter) == logHalf1Counter) {winnerHalf = "1st Half"; winnerHalfNum = logHalf1Counter;}
-                else if (Math.max(logHalf1Counter, logHalf2Counter) == logHalf2Counter) {winnerHalf = "2st Half"; winnerHalfNum = logHalf2Counter;}
+                else if (Math.max(logHalf1Counter, logHalf2Counter) == logHalf2Counter) {winnerHalf = "2nd Half"; winnerHalfNum = logHalf2Counter;}
 
-                if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow1Counter) {winnerRow = "1nd Row"; winnerRowNum = logRow1Counter;}
+                if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow1Counter) {winnerRow = "1st Row"; winnerRowNum = logRow1Counter;}
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow2Counter) {winnerRow = "2nd Row"; winnerRowNum = logRow1Counter;}
-                else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow3Counter) {winnerRow = "3nd Row"; winnerRowNum = logRow1Counter;}
+                else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow3Counter) {winnerRow = "3rd Row"; winnerRowNum = logRow1Counter;}
 
                 Logger.displayMessage("The most frequent cases:\n");
                 double mostNumberPerCent = max * 100 / logLines;
