@@ -12,4 +12,8 @@ public class Logger {
         System.out.println(rounds + "/" + simulationNumber + " >> ");
     }
 
+    public displayMessage(String message) {
+        System.out.println(message);
+    }
+
 }
