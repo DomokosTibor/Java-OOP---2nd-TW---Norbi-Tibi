@@ -9,11 +9,14 @@ public class Logger {
     }
 
     public Logger(int round, int simulationNumber) {
-        System.out.println(rounds + "/" + simulationNumber + " >> ");
+        System.out.println(round + "/" + simulationNumber + " >> ");
     }
 
-    public displayMessage(String message) {
+    public static void displayMessage(String message) {
         System.out.println(message);
     }
 
+    public static void displayMessageNoLN(String message) {
+        System.out.print(message);
+    }
 }
