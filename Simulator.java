@@ -44,12 +44,12 @@ public class Simulator /*extends Simulation implements Logger*/{
 
             }
             catch(FileNotFoundException e) {
-                System.out.println("SIMULATOR ERROR");
+                Logger.displayMessage("SIMULATOR ERROR");
                 return "ERROR";
             }
         }
         else {
-            System.out.println("ERROR: Table file is missing!");
+            Logger.displayMessage("ERROR: Table file is missing!");
             return "ERROR";
         }
 

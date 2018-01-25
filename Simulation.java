@@ -26,7 +26,7 @@ public class Simulation extends Simulator {
                 fbw.close();
             }
             catch (Exception e) {
-                System.out.println("ERROR!!");
+                Logger.displayMessage("ERROR!!");
             }
         }
         else {
@@ -36,7 +36,7 @@ public class Simulation extends Simulator {
                 g.close();
             }
             catch (Exception e) {
-                System.out.println("SIMULATION ERROR");
+                Logger.displayMessage("SIMULATION ERROR");
             }
         }
     }
@@ -49,7 +49,7 @@ public class Simulation extends Simulator {
         
         pw.write(sb.toString());
         pw.close();
-        System.out.println("done!");
+        Logger.displayMessage("done!");
 */
     }
 

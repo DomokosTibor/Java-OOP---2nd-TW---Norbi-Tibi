@@ -116,22 +116,22 @@ public class Statistics {
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow3Counter) {winnerRow = "3nd Row"; winnerRowNum = logRow1Counter;}
 
             // Have to change!!! >> log(String type, String message)
-                System.out.println(mostNumber + " (" + max * 100 / logLines + "%)");
+                Logger.displayMessage(mostNumber + " (" + max * 100 / logLines + "%)");
                 int winnerColorPerCent = winnerColorNum * 100 / (logBlackCounter + logRedCounter + logGreenCounter);
-                System.out.println(winnerColor + " (" + winnerColorPerCent + "%)");
+                Logger.displayMessage(winnerColor + " (" + winnerColorPerCent + "%)");
                 int winnerEvenOrOddPerCent = winnerEvenOrOddNum * 100 / (logOddCounter + logEvenCounter);
-                System.out.println(winnerEvenOrOdd + " (" + winnerEvenOrOddPerCent + "%)");
+                Logger.displayMessage(winnerEvenOrOdd + " (" + winnerEvenOrOddPerCent + "%)");
                 int winnerDozenPerCent = winnerDozenNum * 100 / (logDozen1Counter + logDozen2Counter + logDozen3Counter);
-                System.out.println(winnerDozen + " (" + winnerDozenPerCent + "%)");
+                Logger.displayMessage(winnerDozen + " (" + winnerDozenPerCent + "%)");
                 int winnerHalfPerCent = winnerHalfNum * 100 / (logHalf1Counter + logHalf2Counter);
-                System.out.println(winnerHalf + " (" + winnerHalfPerCent + "%)");
+                Logger.displayMessage(winnerHalf + " (" + winnerHalfPerCent + "%)");
                 int winnerRowPerCent = winnerRowNum * 100 / (logRow1Counter + logRow2Counter + logRow3Counter);
-                System.out.println(winnerRow + " (" + winnerRowPerCent + "%)");
+                Logger.displayMessage(winnerRow + " (" + winnerRowPerCent + "%)");
             }
             catch(FileNotFoundException e) {
-                System.out.println("ERROR");
+                Logger.displayMessage("ERROR");
             }
         }
-        else System.out.println("ERROR: Log file is missing!");
+        else Logger.displayMessage("ERROR: Log file is missing!");
     }
 }
