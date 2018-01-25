@@ -10,9 +10,10 @@ import java.util.Scanner;
 
 public class Simulation extends Simulator {
     private Result result;
+    public int round;
 
-    public Simulation() {
-
+    public Simulation(int round) {
+        this.round = round;
     }
     
     public static void generateData(String filename, String roundData) {
@@ -24,6 +25,7 @@ public class Simulation extends Simulator {
                 fbw.write(roundData);
                 fbw.newLine();
                 fbw.close();
+
             }
             catch (Exception e) {
                 Logger.displayMessage("ERROR!!");
