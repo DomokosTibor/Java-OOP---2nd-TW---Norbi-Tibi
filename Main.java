@@ -1,15 +1,17 @@
 public class Main {
+    static int simulationNumber = 0;
 
     public static Simulation generateSimulation(int round) {
        
         Simulation simulation = new Simulation(round);
-        //Simulator simulator = new Simulator(simulation, new Logger(round, simulationNumber));
+        Simulator simulator = new Simulator(simulation, new Logger(round, simulationNumber));
         
        
         Logger.displayMessage("Adding " + round + " simulation(s) into the LOG file:");
         int progress = 0;
         for (double i = 0; i < round; i++) {
-            Simulation.generateData("log.csv", Simulator.run());
+            Result res = Simulator.run();
+            Simulation.generateData("log.csv", res);
             if (i / round == 0) Logger.displayMessageNoLN("0% ");
             else if (i / round >= 0.1 && progress < 10 && round >= 10) {Logger.displayMessageNoLN("... 10% "); progress = 11;}
             else if (i / round >= 0.2 && progress < 20 && round >= 10) {Logger.displayMessageNoLN("... 20% "); progress = 21;}

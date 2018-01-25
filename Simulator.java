@@ -7,6 +7,7 @@ public class Simulator /*extends Simulation implements Logger*/{
     public Simulation simulation;
     public Logger logger;
     
+    
 
 
     
@@ -15,11 +16,11 @@ public class Simulator /*extends Simulation implements Logger*/{
             this.logger = logger;
         }
     
-    public static String run() {
+    public static Result run() {
         
         Random rand = new Random();
         int n = rand.nextInt(37);
-        String roundData = "ERROR";
+        Result roundData = new Result("Error");
 
         String fileName = "table.csv";
         File f = new File(fileName);
@@ -28,10 +29,12 @@ public class Simulator /*extends Simulation implements Logger*/{
                 File x = new File(fileName);
                 Scanner sc = new Scanner(x);
                 int counter = 0;
+                String logLine;
                 while (sc.hasNext()) {
-                    String logLine = sc.next();
+                    logLine = sc.next();
+                    Result loglineResult = new Result(logLine);
                     if (counter == n) {
-                        roundData = logLine;
+                        roundData = loglineResult;
                     }
                     counter++;
                 }
@@ -41,12 +44,12 @@ public class Simulator /*extends Simulation implements Logger*/{
             }
             catch(FileNotFoundException e) {
                 Logger.displayMessage("SIMULATOR ERROR");
-                return "ERROR";
+                return roundData;
             }
         }
         else {
             Logger.displayMessage("ERROR: Table file is missing!");
-            return "ERROR";
+            return roundData;
         }
 
     }

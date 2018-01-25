@@ -8,7 +8,7 @@ import java.util.Formatter;
 import java.util.Scanner;
 
 
-public class Simulation extends Simulator {
+public class Simulation {//extends Simulator {
     private Result result;
     public int round;
 
@@ -16,13 +16,13 @@ public class Simulation extends Simulator {
         this.round = round;
     }
     
-    public static void generateData(String filename, String roundData) {
+    public static void generateData(String filename, Result roundData) {
         File x = new File(filename);
         if (x.exists()) {
             try {
                 FileWriter fstream = new FileWriter(filename,true);
                 BufferedWriter fbw = new BufferedWriter(fstream);
-                fbw.write(roundData);
+                fbw.write(roundData.result);
                 fbw.newLine();
                 fbw.close();
 

@@ -1,7 +1,7 @@
-public class Result extends Simulation{
-    int result;
+public class Result{ //extends Simulation{
+    String result;
     
-    public Result(int result) {
+    public Result(String result) {
         this.result = result;
     }
 
