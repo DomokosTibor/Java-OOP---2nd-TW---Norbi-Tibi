@@ -28,15 +28,15 @@ public class Statistics {
 
                 int mostNumber = -1;
                 String winnerColor = null;
-                int winnerColorNum = 0;
+                double winnerColorNum = 0;
                 String winnerEvenOrOdd = null;
-                int winnerEvenOrOddNum = 0;
+                double winnerEvenOrOddNum = 0;
                 String winnerDozen = null;
-                int winnerDozenNum = 0;
+                double winnerDozenNum = 0;
                 String winnerHalf = null;
-                int winnerHalfNum = 0;
+                double winnerHalfNum = 0;
                 String winnerRow = null;
-                int winnerRowNum = 0;
+                double winnerRowNum = 0;
 
                 int rolledNum = 0;
                 int max = -1;
@@ -77,8 +77,8 @@ public class Statistics {
                         }
                     }
                     
+//                  logNumber, logColor, logEvenOrOdd, logDozen, logHalf, logRow
 
-//              logNumber, logColor, logEvenOrOdd, logDozen, logHalf, logRow
                     if (logLine.split(",")[1].equals("red")) logRedCounter++;
                     else if (logLine.split(",")[1].equals("black")) logBlackCounter++;
                     else logGreenCounter++;
@@ -115,18 +115,20 @@ public class Statistics {
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow2Counter) {winnerRow = "2nd Row"; winnerRowNum = logRow1Counter;}
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow3Counter) {winnerRow = "3nd Row"; winnerRowNum = logRow1Counter;}
 
-            // Have to change!!! >> log(String type, String message)
-                Logger.displayMessage(mostNumber + " (" + max * 100 / logLines + "%)");
-                int winnerColorPerCent = winnerColorNum * 100 / (logBlackCounter + logRedCounter + logGreenCounter);
-                Logger.displayMessage(winnerColor + " (" + winnerColorPerCent + "%)");
-                int winnerEvenOrOddPerCent = winnerEvenOrOddNum * 100 / (logOddCounter + logEvenCounter);
-                Logger.displayMessage(winnerEvenOrOdd + " (" + winnerEvenOrOddPerCent + "%)");
-                int winnerDozenPerCent = winnerDozenNum * 100 / (logDozen1Counter + logDozen2Counter + logDozen3Counter);
-                Logger.displayMessage(winnerDozen + " (" + winnerDozenPerCent + "%)");
-                int winnerHalfPerCent = winnerHalfNum * 100 / (logHalf1Counter + logHalf2Counter);
-                Logger.displayMessage(winnerHalf + " (" + winnerHalfPerCent + "%)");
-                int winnerRowPerCent = winnerRowNum * 100 / (logRow1Counter + logRow2Counter + logRow3Counter);
-                Logger.displayMessage(winnerRow + " (" + winnerRowPerCent + "%)");
+                Logger.displayMessage("The most frequent cases:\n");
+                double mostNumberPerCent = max * 100 / logLines;
+                Logger.displayMessage("\t" + mostNumber + " (" + mostNumberPerCent + "%)");
+                double winnerColorPerCent = winnerColorNum * 100 / (logBlackCounter + logRedCounter + logGreenCounter);
+                Logger.displayMessage("\t" + winnerColor + " (" + winnerColorPerCent + "%)");
+                double winnerEvenOrOddPerCent = winnerEvenOrOddNum * 100 / (logOddCounter + logEvenCounter);
+                Logger.displayMessage("\t" + winnerEvenOrOdd + " (" + winnerEvenOrOddPerCent + "%)");
+                double winnerDozenPerCent = winnerDozenNum * 100 / (logDozen1Counter + logDozen2Counter + logDozen3Counter);
+                Logger.displayMessage("\t" + winnerDozen + " (" + winnerDozenPerCent + "%)");
+                double winnerHalfPerCent = winnerHalfNum * 100 / (logHalf1Counter + logHalf2Counter);
+                Logger.displayMessage("\t" + winnerHalf + " (" + winnerHalfPerCent + "%)");
+                double winnerRowPerCent = winnerRowNum * 100 / (logRow1Counter + logRow2Counter + logRow3Counter);
+                Logger.displayMessage("\t" + winnerRow + " (" + winnerRowPerCent + "%)");
+                Logger.displayMessage("");
             }
             catch(FileNotFoundException e) {
                 Logger.displayMessage("ERROR");

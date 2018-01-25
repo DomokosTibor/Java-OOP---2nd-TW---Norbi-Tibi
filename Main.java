@@ -32,15 +32,18 @@ public class Main {
             Statistics.getStat();
         }
         else {
-            int simulationNumber = Integer.parseInt(args[0]);
             int maxSimulationNumber = 1000000;
-
-            if (simulationNumber > maxSimulationNumber || simulationNumber < 1) {
-                Logger.displayMessage("Number of simulations cannot be lower than 1 and bigger than " + maxSimulationNumber);
-                System.exit(-1);
+            try {
+                int simulationNumber = Integer.parseInt(args[0]);
+                if (simulationNumber > maxSimulationNumber || simulationNumber < 1) {
+                    Logger.displayMessage("Number of simulations cannot be lower than 1 and bigger than " + maxSimulationNumber);
+                    System.exit(-1);
+                }
+                generateSimulation(simulationNumber);
             }
-//            Simulation[] simulations = new Simulation[simulationNumber];}
-            generateSimulation(simulationNumber);
+            catch(NumberFormatException e) {
+                Logger.displayMessage("The number of simulation has to be a NUMBER between 1 and " + maxSimulationNumber + "!");
+            }
             
         }
     }
