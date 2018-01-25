@@ -4,21 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Simulator /*extends Simulation implements Logger*/{
+    public Simulation simulation;
+    public Logger logger;
     
-    
-/*
 
-    public Simulator() {
-        private Simulation simulation;
-        private Logger logger;
-        
+
     
         Simulator(Simulation simulation, Logger logger) {
             this.simulation = simulation;
             this.logger = logger;
         }
-    }
-*/
+    
     public static String run() {
         
         Random rand = new Random();

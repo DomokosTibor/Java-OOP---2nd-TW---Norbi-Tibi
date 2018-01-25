@@ -2,6 +2,10 @@ import java.util.Date;
 
 public class Logger {
 
+    public Logger() {
+
+    }
+
     public void log(String type, String message){
         Date now = new Date();
         now.getTime();
