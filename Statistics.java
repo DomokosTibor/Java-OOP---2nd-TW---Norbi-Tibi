@@ -39,7 +39,7 @@ public class Statistics {
                 double winnerRowNum = 0;
 
                 int rolledNum = 0;
-                int max = -1;
+                double max = -1;
                 int logLines = 0;
                 int logLineCounter = 0;
 
@@ -115,7 +115,7 @@ public class Statistics {
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow2Counter) {winnerRow = "2nd Row"; winnerRowNum = logRow1Counter;}
                 else if ((Math.max(logRow1Counter, Math.max(logRow2Counter, logRow3Counter))) == logRow3Counter) {winnerRow = "3rd Row"; winnerRowNum = logRow1Counter;}
 
-                Logger.displayMessage("The most frequent cases:\n");
+                Logger.displayMessage("The most frequent cases in the last "+ logLines + " simulations:\n");
                 double mostNumberPerCent = max * 100 / logLines;
                 Logger.displayMessage("\t" + mostNumber + " (" + mostNumberPerCent + "%)");
                 double winnerColorPerCent = winnerColorNum * 100 / (logBlackCounter + logRedCounter + logGreenCounter);
