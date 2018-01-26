@@ -77,8 +77,7 @@ public class Statistics {
                         }
                     }
                     
-//                  logNumber, logColor, logEvenOrOdd, logDozen, logHalf, logRow
-
+                    // logNumber, logColor, logEvenOrOdd, logDozen, logHalf, logRow
                     if (logLine.split(",")[1].equals("red")) logRedCounter++;
                     else if (logLine.split(",")[1].equals("black")) logBlackCounter++;
                     else logGreenCounter++;
