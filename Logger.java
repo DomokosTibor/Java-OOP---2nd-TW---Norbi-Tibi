@@ -13,7 +13,7 @@ public class Logger {
     }
 
     public Logger(int round, int simulationNumber) {
-        System.out.println(round + "/" + simulationNumber + " >> ");
+        //System.out.println(round + "/" + simulationNumber + " >> ");
     }
 
     public static void displayMessage(String message) {
